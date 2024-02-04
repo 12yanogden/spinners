@@ -22,7 +22,7 @@ func TestWave(t *testing.T) {
 }
 
 func doTask(active *bool) {
-	time.Sleep(time.Duration(3) * time.Second)
+	time.Sleep(time.Duration(10) * time.Second)
 
 	*active = false
 }
