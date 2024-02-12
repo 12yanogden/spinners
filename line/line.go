@@ -8,10 +8,15 @@ type Line struct {
 	spinner spinner.Spinner
 }
 
-func (l *Line) Init(active *bool) {
-	l.spinner = spinner.Spinner{}
-
-	l.spinner.Init(active, []string{"|", "/", "-", `\`}, 1, 100)
+func New(active *bool) Line {
+	return Line{
+		spinner: spinner.New(
+			active,
+			`⎽⎼―⎻⎺ `,
+			1,
+			100,
+		),
+	}
 }
 
 func (l *Line) Play() string {

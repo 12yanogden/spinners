@@ -1,4 +1,4 @@
-package braille
+package shutters
 
 import (
 	"fmt"
@@ -6,14 +6,14 @@ import (
 	"time"
 )
 
-func TestBraille(t *testing.T) {
+func TestShutters(t *testing.T) {
 	active := true
-	braille := New(&active)
+	shutters := New(&active)
 
 	go doTask(&active)
 
 	for active {
-		fmt.Printf("\r%s", braille.Play())
+		fmt.Printf("\r%s", shutters.Play())
 	}
 
 	fmt.Println()

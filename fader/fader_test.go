@@ -1,4 +1,4 @@
-package braille
+package fader
 
 import (
 	"fmt"
@@ -6,21 +6,21 @@ import (
 	"time"
 )
 
-func TestBraille(t *testing.T) {
+func TestFader(t *testing.T) {
 	active := true
-	braille := New(&active)
+	fader := New(&active)
 
 	go doTask(&active)
 
 	for active {
-		fmt.Printf("\r%s", braille.Play())
+		fmt.Printf("\r%s", fader.Play())
 	}
 
 	fmt.Println()
 }
 
 func doTask(active *bool) {
-	time.Sleep(time.Duration(3) * time.Second)
+	time.Sleep(time.Duration(10) * time.Second)
 
 	*active = false
 }

@@ -8,9 +8,7 @@ import (
 
 func TestLine(t *testing.T) {
 	active := true
-	line := Line{}
-
-	line.Init(&active)
+	line := New(&active)
 
 	go doTask(&active)
 

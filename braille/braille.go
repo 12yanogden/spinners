@@ -8,10 +8,15 @@ type Braille struct {
 	spinner spinner.Spinner
 }
 
-func (b *Braille) Init(active *bool) {
-	b.spinner = spinner.Spinner{}
-
-	b.spinner.Init(active, []string{"⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷"}, 1, 100)
+func New(active *bool) Braille {
+	return Braille{
+		spinner: spinner.New(
+			active,
+			`⣾⣽⣻⢿⡿⣟⣯⣷`,
+			1,
+			100,
+		),
+	}
 }
 
 func (b *Braille) Play() string {
